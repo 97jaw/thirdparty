@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--admin-->
+    <record id="admin_dev_user_location_access_right" model="ir.rule">
+        <field name="name">Admin access all locations</field>
+        <field ref="stock.model_stock_location" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+    <!--user-->
+    <record id="location_access_dev_user_location_access_rule" model="ir.rule">
+        <field name="name">User access allowed locations</field>
+        <field ref="stock.model_stock_location" name="model_id"/>
+        <field name="domain_force">[('id','child_of',user.allowed_location_ids.ids)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>
