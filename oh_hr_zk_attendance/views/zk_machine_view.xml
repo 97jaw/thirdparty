@@ -56,9 +56,9 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='hr_settings']//field[@name='user_id']" position="after">
+            <field name="user_id" position="after">
                 <field name="device_id"/>
-            </xpath>
+            </field>
         </field>
     </record>
 
