@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="hr_employee_view_attendance" model="ir.ui.view">
+			<field name="name">hr.employee.view.attendance</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//page[@name='hr_settings']" position="after">
+						<page string="Attendance Devices" name="attendance_device" groups="hr_attendance.group_hr_attendance_user">
+							<field name="attendance_devices" nolabel="1" context="{'default_name':active_id}" help="All the attendance devices linked to the employee are to be defined here" readonly="1"/>
+						</page>
+					</xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <record id="channel_biometric_monitoring" model="mail.channel">
+        <field name="name">Biometric Monitoring</field>
+        <field name="description">General announcements for biometric device concerns.</field>
+        <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+</odoo>

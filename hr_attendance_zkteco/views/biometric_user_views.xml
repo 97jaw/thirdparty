@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="employee_att_devices_view_search" model="ir.ui.view" >
+			<field name="name">Employees Attendance Devices Search View</field>
+			<field name="model">employee.attendance.devices</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="employee_id" />
+					<field name="device_id" />
+					<separator />
+					<filter string="Admin" name="filter_admin"
+							domain="[('access_type','=','14')]"/>
+					<filter string="User" name="filter_user"
+							domain="[('access_type','=','0')]"/>
+					<separator/>
+					<filter name="groupby_device" string="Device" context="{'group_by':'device_id'}" />
+					<filter name="groupby_employee_id" string="Employee" context="{'group_by':'employee_id'}" />
+					<filter name="groupby_name" string="Alias" context="{'group_by':'name'}" />
+					<filter name="groupby_access_type" string="Access" context="{'group_by':'access_type'}" />
+				</search>
+			</field>
+		</record>
+
+		<record id="employee_att_devices_view_form" model="ir.ui.view" >
+			<field name="name">Employees Attendance Devices Form View</field>
+			<field name="model">employee.attendance.devices</field>
+			<field name="arch" type="xml">
+				<form string="Employee Devices" create="0">
+					<sheet>
+						<group col="4">
+							<field name="name" help="Employee" readonly="1"/>
+							<field name="employee_id" help="Employee"/>
+							<field name="attendance_id" help="Linked Attendance device Id for this employee" readonly="1"/>
+							<field name="device_id" help="Associated Device with the employee" readonly="1"/>
+							<field name="card_number"/>
+							<field name="access_type" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="employee_att_devices_view_tree" model="ir.ui.view">
+			<field name="name">Employees Attendance Devices Tree View</field>
+			<field name="model">employee.attendance.devices</field>
+			<field name="arch" type="xml">
+				<tree create="0">
+					<field name="name"/>
+					<field name="employee_id"/>
+					<field name="attendance_id" />
+					<field name="device_id" />
+					<field name="card_number" />
+					<field name="access_type" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_biometric_users">
+			<field name="name">Biometric Users</field>
+			<field name="res_model">employee.attendance.devices</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_groupby_employee_id':1}</field>
+		</record>
+
+	</data>
+</odoo>
