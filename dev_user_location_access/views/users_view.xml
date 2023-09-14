@@ -5,20 +5,18 @@ Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintelle
 For Module Support : devintelle@gmail.com  or Skype : devintelle
  -->
 <odoo>
-    <record id="user_form_dev_user_location_access_inherited" model="ir.ui.view">
-        <field name="name">user.form.dev.user.location.access.inherited</field>
-        <field name="model">res.users</field>
-        <field name="inherit_id" ref="base.view_users_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//notebook" position="inside">
-                <page name="location_access" string="Warehouse Location Access">
-                    <group>
-                        <group string="Allowed Locations">
-                            <field name="allowed_location_ids" widget="many2many_tags"/>
-                        </group>
-                    </group>
-                </page>
-            </xpath>
-        </field>
+
+
+
+
+<record id="shop_manager_access" model="ir.rule">
+        <field name="name">Shops for corresponding managers only</field>
+        <field name="model_id" ref="stock.model_stock_picking_type"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+         <field name="domain_force">[(1,'=',1)]</field>
     </record>
 </odoo>
