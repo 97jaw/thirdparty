@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2022-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -21,7 +21,7 @@
 #############################################################################
 {
     'name': 'Open HRMS Biometric Device Integration',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.1.0',
     'summary': """Integrating Biometric Device With HR Attendance (Face + Thumb)""",
     'description': 'This module integrates Odoo with the biometric device(Model: ZKteco uFace 202)',
     'category': 'Generic Modules/Human Resources',

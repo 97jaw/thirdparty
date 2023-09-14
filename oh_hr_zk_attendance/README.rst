@@ -1,4 +1,4 @@
-Biometric Device Integration v16
+Biometric Device Integration v15
 ================================
 This Cybrosys's module integrates Odoo attendance with biometric device attendance.
 
@@ -29,11 +29,10 @@ Author
 
 Credits
 =======
-Developer: Jesni Banu @ cybrosys, jesni@cybrosys.in  V10
 Developer: Niyas Raphy @ Cybrosys, niyas@cybrosys.in V11
+Developer: Jesni Banu @ cybrosys, jesni@cybrosys.in  V10
 Developer: Basith @ Cybrosys, basith@cybrosys.in     V12
 Developer: IJaz @ Cybrosys, ijaz@cybrosys.in     V14
 Developer: Midilaj @ Cybrosys, midilaj@cybrosys.in V15
-Developer: Minhaj @ Cybrosys, minhaj@cybrosys.in V16
 Developer: Mostafa Shokiel , mostafa.shokiel@gmail.com
 
