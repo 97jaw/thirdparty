@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="inherit_res_partner" model="ir.ui.view">
+            <field name="name">Res Partner</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_product_pricelist']" position="after">
+                    <field name="enable_default_discount" groups="product.group_discount_per_so_line"/>
+                    <field name="default_discount" groups="product.group_discount_per_so_line"
+                           attrs="{'invisible': [('enable_default_discount', '=', False)], 'required': [('enable_default_discount', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale.order.form.view.default_discount</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="enable_default_discount" invisible="1"/>
+                    <field name="default_discount" groups="product.group_discount_per_so_line"
+                           attrs="{'invisible': [('enable_default_discount', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_account_move_form_view" model="ir.ui.view">
+            <field name="name">account.move.form.view.default_discount</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="enable_default_discount" invisible="1"/>
+                    <field name="default_discount" groups="product.group_discount_per_so_line"
+                           attrs="{'invisible': [('enable_default_discount', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
